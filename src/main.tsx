@@ -1,19 +1,19 @@
+import { MantineProvider } from "@mantine/core";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { MantineProvider } from "@mantine/core";
-import { CharacterAnimationsProvider } from "./contexts/CharacterAnimations";
+import Providers from "./contexts/Providers";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <MantineProvider
       withGlobalStyles
       withNormalizeCSS
       theme={{
-        globalStyles: (_theme) => ({
+        globalStyles: () => ({
           body: {
-            width: "100vw",
-            height: "100vh",
+            width: "100dvw",
+            height: "100dvh",
           },
           "#root": {
             width: "100%",
@@ -22,9 +22,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         }),
       }}
     >
-      <CharacterAnimationsProvider>
+      <Providers>
         <App />
-      </CharacterAnimationsProvider>
+      </Providers>
     </MantineProvider>
   </React.StrictMode>
 );
